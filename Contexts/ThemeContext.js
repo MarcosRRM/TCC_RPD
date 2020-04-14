@@ -1,3 +1,5 @@
 import React from 'react';
+import {withContext} from 'with-context';
 
-export default React.createContext();
+export const ThemeContext = React.createContext();
+export const WithThemeContext = withContext(ThemeContext,'theme')

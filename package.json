@@ -1,4 +1,14 @@
 {
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  },
   "name": "TCCDiary",
   "version": "0.0.1",
   "private": true,
@@ -10,12 +20,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-elements": "^1.2.7",
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-navigation": "^6.4.0",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-ui-xg": "0.0.6",
+    "react-native-vector-icons": "^6.6.0",
+    "with-context": "0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

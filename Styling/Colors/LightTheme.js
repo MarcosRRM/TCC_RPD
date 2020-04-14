@@ -12,6 +12,12 @@ export default {
 
   Text: {
     Primary: AppColors.Neutral.Black,
-    Secundary: AppColors.Neutral.Dark
+    Secundary: AppColors.Neutral.Dark,
+    Inverted: AppColors.Neutral.White,
+    Tittle: AppColors.Primary.Dark
+  },
+
+  Input:{
+    Background: AppColors.Neutral.Light
   }
 }

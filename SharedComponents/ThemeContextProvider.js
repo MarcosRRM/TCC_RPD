@@ -1,6 +1,6 @@
 import React from 'react';
 import {LightTheme, DarkTheme} from '../Styling/Colors';
-import ThemeContext from '../Contexts/ThemeContext';
+import {ThemeContext} from '../Contexts/ThemeContext';
 
 export default class ThemeContextProvider extends React.Component{
 
@@ -16,6 +16,7 @@ export default class ThemeContextProvider extends React.Component{
     this.setState({isLightTheme: !this.state.isLightTheme})
   }
 
+  getCurrentTheme = () => this.state.isLightTheme ? LightTheme : DarkTheme;
   //#endregion
 
 
@@ -23,8 +24,8 @@ export default class ThemeContextProvider extends React.Component{
     return(
       <ThemeContext.Provider
       value={{
-        changeTheme:this.handleThemeChange,
-        ...(this.state.isLightTheme ? LightTheme : DarkTheme)
+        changeTheme: this.handleThemeChange,
+        ...this.getCurrentTheme()
       }}
       >
         {this.props.children}

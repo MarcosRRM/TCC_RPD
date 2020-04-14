@@ -1,9 +1,9 @@
-
-
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import RPDList from './screens/RPDList';
+import ScreenManager from './ScreensManager';
 import ThemeContextProvider from './SharedComponents/ThemeContextProvider';
+
+
 
 export default class App extends React.Component{
 
@@ -11,7 +11,7 @@ export default class App extends React.Component{
     return (
       <ThemeContextProvider>
         <SafeAreaView>
-          <RPDList/>
+          <ScreenManager/>
         </SafeAreaView>
       </ThemeContextProvider>
     );

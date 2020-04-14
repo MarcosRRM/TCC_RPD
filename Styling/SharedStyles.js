@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const TextStyle = StyleSheet.create({
+const TextStyle = {
   Small:{
     fontSize:16
   },
@@ -10,8 +10,15 @@ const TextStyle = StyleSheet.create({
   Big:{
     fontSize:26
   }
-}); 
+}; 
+
+const ScreenStyle = {
+  HeaderPadding:{
+    paddingTop: 70
+  }
+}
 
 export {
-  TextStyle
+  TextStyle,
+  ScreenStyle
 }
