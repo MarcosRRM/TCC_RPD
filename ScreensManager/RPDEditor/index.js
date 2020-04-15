@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, TextInput, ScrollView, DatePickerAndroid} from 'react-native'; 
+import {View, TextInput, ScrollView, DatePickerAndroid, ShadowPropTypesIOS, TouchableHighlight} from 'react-native';
+import {Icon} from 'react-native-elements';
 import {TextStyle,ScreenStyle} from '../../Styling/SharedStyles';
 import Header from '../../SharedComponents/Header';
 import RPDTextArea from './RPDTextArea';
@@ -30,9 +31,13 @@ export default class RPDEditor extends React.Component{
     }
   }
 
+  handleSave=()=>{
+
+  }
+
   render(){
     return(
-      <View style={{background:'green', height: '100%', width: '100%'}}>
+      <View style={{height: '100%', width: '100%'}}>
         <ScrollView
         style={[
           {
@@ -75,7 +80,23 @@ export default class RPDEditor extends React.Component{
           <RPDTextArea/>
 
         </ScrollView>
-        <Header/>
+        <Header>
+          <View style={{width:'100%',height:'100%', justifyContent:'space-between', flexDirection:'row'}}>
+            <Icon
+            onPress={()=>this.props.showScreen('RPDList')}
+            name={'arrowleft'}
+            type={'antdesign'}
+            color={'white'}
+            size={50}
+            />
+            <Icon
+            onPress={this.handleSave}
+            name={'content-save-edit'}
+            type={'material-community'}
+            size={50}
+            />
+          </View>
+        </Header>
       </View>
     )
   }

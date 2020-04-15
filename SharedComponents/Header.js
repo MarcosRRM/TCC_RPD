@@ -11,7 +11,8 @@ export default class Header extends React.Component {
         position: 'absolute',
         left: 0,
         top: 0,
-        zIndex: 100
+        zIndex: 100,
+        padding: 5
       }}>
         {this.props.children}
       </View>

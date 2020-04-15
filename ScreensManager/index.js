@@ -12,7 +12,7 @@ export default class ScreensManager extends React.Component{
     }
   }
 
-  handleShowScreen = (_screenName, _props) => {
+  handleShowScreen = (_screenName, _props={}) => {
     let currentList = this.state.ScreenList;
 
     if(this.state.ScreenNames.find( (scr) => scr === _screenName) ){
