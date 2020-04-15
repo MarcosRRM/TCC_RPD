@@ -5,7 +5,7 @@ export default class ScreensManager extends React.Component{
 
   constructor(props){
     super(props);
-    const list = SetUpScreenList('RPDList');
+    const list = SetUpScreenList('APPLogin');
     this.state = {
       ScreenList:list,
       ScreenNames: Object.keys(list)

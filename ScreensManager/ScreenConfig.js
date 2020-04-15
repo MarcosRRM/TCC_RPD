@@ -1,9 +1,11 @@
 import RPDEditor from './RPDEditor';
 import RPDList from  './RPDList';
+import APPLogin from './AppLogin';
 
 const ScreenComponents = [
   {name: 'RPDEditor', component: RPDEditor},
-  {name: 'RPDList', component: RPDList}
+  {name: 'RPDList', component: RPDList},
+  {name: 'APPLogin', component: APPLogin}
 ]
 
 const SetUpScreenList = (_initialScreen) => {
