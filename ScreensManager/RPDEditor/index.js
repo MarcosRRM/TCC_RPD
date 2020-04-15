@@ -4,16 +4,15 @@ import {Icon} from 'react-native-elements';
 import {TextStyle,ScreenStyle} from '../../Styling/SharedStyles';
 import Header from '../../SharedComponents/Header';
 import RPDTextArea from './RPDTextArea';
-import RPDSectionTittle from './RPDSectionTittle';
+import RPDSectionTitle from './RPDSectionTitle';
 
 
 export default class RPDEditor extends React.Component{
 
   constructor(props){
     super(props);
-    console.log(props)
     this.state={
-      RPDTittle:props.tittle,
+      RPDTitle:props.title,
       RPDDateTime: new Date(),
       RPDSituation: '',
       RPDAutoThoughts: '',
@@ -47,36 +46,36 @@ export default class RPDEditor extends React.Component{
           },
           ScreenStyle.HeaderPadding]}
         >
-          <RPDSectionTittle>Título</RPDSectionTittle>
+          <RPDSectionTitle>Título</RPDSectionTitle>
           <TextInput
-          onChangeText={(newValue)=>this.handleInfoUpdate('RPDTittle',newValue)}
-          value={this.state.RPDTittle}
+          onChangeText={(newValue)=>this.handleInfoUpdate('RPDTitle',newValue)}
+          value={this.state.RPDTitle}
           multiline={false}
           numberOfLines={1}
           style={TextStyle.Medium}
           />
 
-          <RPDSectionTittle>Data/Hora</RPDSectionTittle>
+          <RPDSectionTitle>Data/Hora</RPDSectionTitle>
           <TextInput
-          onChangeText={(newValue)=>this.handleInfoUpdate('RPDTittle',newValue)}
+          onChangeText={(newValue)=>this.handleInfoUpdate('RPDTitle',newValue)}
           multiline={false}
           numberOfLines={1}
           style={TextStyle.Medium}
           />
           
-          <RPDSectionTittle>Situação</RPDSectionTittle>
+          <RPDSectionTitle>Situação</RPDSectionTitle>
           <RPDTextArea onChangeText={(a,b,c)=>console.log(a)}/>
 
-          <RPDSectionTittle>Pensamentos Automáticos</RPDSectionTittle>
+          <RPDSectionTitle>Pensamentos Automáticos</RPDSectionTitle>
           <RPDTextArea/>
           
-          <RPDSectionTittle>Emoção</RPDSectionTittle>
+          <RPDSectionTitle>Emoção</RPDSectionTitle>
           <RPDTextArea/>
           
-          <RPDSectionTittle>Conclusão</RPDSectionTittle>
+          <RPDSectionTitle>Conclusão</RPDSectionTitle>
           <RPDTextArea/>
           
-          <RPDSectionTittle>Resultado</RPDSectionTittle>
+          <RPDSectionTitle>Resultado</RPDSectionTitle>
           <RPDTextArea/>
 
         </ScrollView>

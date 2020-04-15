@@ -4,14 +4,14 @@ import RPDCard from './RPDCard';
 import Tools from '../../TestTools';
 
 const data = [
-  {tittle:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {tittle:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
+  {title:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
   
 ]
 

@@ -26,7 +26,7 @@ export default class RPDCard extends React.Component{
             color:this.props.theme.Text.Inverted
           }}
           >
-            {this.props.rpdData.tittle}
+            {this.props.rpdData.title}
           </Text>
             
           <View style={{flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
