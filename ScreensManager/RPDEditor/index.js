@@ -11,14 +11,15 @@ export default class RPDEditor extends React.Component{
 
   constructor(props){
     super(props);
+    console.log(props)
     this.state={
-      RPDTitle:props.title,
+      RPDTitle: props.title,
       RPDDateTime: new Date(),
-      RPDSituation: '',
-      RPDAutoThoughts: '',
-      RPDEmotion: '',
-      RPDConclusion: '',
-      RPDResult: ''
+      RPDSituation: props.situation,
+      RPDAutoThoughts: props.autoThoughts,
+      RPDEmotion: props.emotion,
+      RPDConclusion: props.conclusion,
+      RPDResult: props.result
     }
   }
 
@@ -57,26 +58,27 @@ export default class RPDEditor extends React.Component{
 
           <RPDSectionTitle>Data/Hora</RPDSectionTitle>
           <TextInput
-          onChangeText={(newValue)=>this.handleInfoUpdate('RPDTitle',newValue)}
+          value={this.state.RPDDateTime.toDateString()}
+          editable={false}
           multiline={false}
           numberOfLines={1}
           style={TextStyle.Medium}
           />
           
           <RPDSectionTitle>Situação</RPDSectionTitle>
-          <RPDTextArea onChangeText={(a,b,c)=>console.log(a)}/>
+          <RPDTextArea value={this.state.RPDSituation}/>
 
           <RPDSectionTitle>Pensamentos Automáticos</RPDSectionTitle>
-          <RPDTextArea/>
+          <RPDTextArea value={this.state.RPDAutoThoughts}/>
           
           <RPDSectionTitle>Emoção</RPDSectionTitle>
-          <RPDTextArea/>
+          <RPDTextArea value={this.state.RPDEmotion}/>
           
           <RPDSectionTitle>Conclusão</RPDSectionTitle>
-          <RPDTextArea/>
+          <RPDTextArea value={this.state.RPDConclusion}/>
           
           <RPDSectionTitle>Resultado</RPDSectionTitle>
-          <RPDTextArea/>
+          <RPDTextArea value={this.state.RPDResult}/>
 
         </ScrollView>
         <Header>

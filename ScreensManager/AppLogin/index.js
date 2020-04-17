@@ -6,7 +6,6 @@ import ThemedButton from '../../SharedComponents/ThemedButton';
 export default class AppLogin extends React.Component{
 
   render(){
-    console.log('rendering');
     return(
       <View
       style={{

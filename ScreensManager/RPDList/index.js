@@ -1,26 +1,15 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
 import RPDCard from './RPDCard';
-import Tools from '../../TestTools';
+import { WithRPDContext } from '../../Contexts/RPDContext';
 
-const data = [
-  {title:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD I'  , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD III', date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD IV' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  {title:'Meu RPD II' , date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))},
-  
-]
-
-export default class App extends React.Component{
+@WithRPDContext
+export default class RPDList extends React.Component{
   render(){
     return (
       <>
         <FlatList
-        data={data}
+        data={this.props.RPDCtx.list}
         style={{width:'90%',marginRight:'auto', marginLeft:'auto'}}
         renderItem={({item})=>{
           return(
