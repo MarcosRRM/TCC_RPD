@@ -7,6 +7,11 @@ export default {
     Inverse: AppColors.Neutral.Dark
   },
   
+  Header:{
+    Background: AppColors.Neutral.Light,
+    Foreground: AppColors.Green.Darker
+  },
+
   Card:{
     Background: AppColors.Green.Light
   },
