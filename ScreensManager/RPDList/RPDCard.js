@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableHighlight, View, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {TextStyle} from '../../Styling/SharedStyles';
+import {TextSizes} from '../../Styling/SharedStyles';
 import { WithThemeContext } from '../../Contexts/ThemeContext';
 
 @WithThemeContext
@@ -15,13 +15,14 @@ export default class RPDCard extends React.Component{
           borderRadius:5,
           padding: 5,
           flex:1,
+          elevation: 2,
           backgroundColor:this.props.theme.Card.Background
         }}
         >
           <Text
           numberOfLines={1}
           style={{
-            ...TextStyle.Big,
+            ...TextSizes.Big,
             flex: 1,
             color:this.props.theme.Text.Inverted
           }}
@@ -40,7 +41,7 @@ export default class RPDCard extends React.Component{
               <Text
               numberOfLines={1}
               style={{
-                ...TextStyle.Medium,
+                ...TextSizes.Medium,
                 marginLeft: 10,
                 color:this.props.theme.Text.Inverted
               }}

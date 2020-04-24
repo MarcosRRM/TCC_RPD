@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput} from 'react-native';
 import {WithThemeContext} from '../../Contexts/ThemeContext';
-import {TextStyle} from '../../Styling/SharedStyles';
+import {TextSizes} from '../../Styling/SharedStyles';
 
 @WithThemeContext
 export default class RPDTextArea extends React.Component {
@@ -18,7 +18,7 @@ export default class RPDTextArea extends React.Component {
       <TextInput
       style={
         [ 
-          TextStyle.Medium,
+          TextSizes.Medium,
           _style
         ]
       }

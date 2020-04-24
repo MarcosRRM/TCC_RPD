@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, TextInput, ScrollView, DatePickerAndroid, ShadowPropTypesIOS, TouchableHighlight} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {TextStyle,ScreenStyle} from '../../Styling/SharedStyles';
+import {TextSizes,ScreenStyle} from '../../Styling/SharedStyles';
 import Header from '../../SharedComponents/Header';
 import RPDTextArea from './RPDTextArea';
 import RPDSectionTitle from './RPDSectionTitle';
@@ -53,7 +53,7 @@ export default class RPDEditor extends React.Component{
           value={this.state.RPDTitle}
           multiline={false}
           numberOfLines={1}
-          style={TextStyle.Medium}
+          style={TextSizes.Medium}
           />
 
           <RPDSectionTitle>Data/Hora</RPDSectionTitle>
@@ -62,7 +62,7 @@ export default class RPDEditor extends React.Component{
           editable={false}
           multiline={false}
           numberOfLines={1}
-          style={TextStyle.Medium}
+          style={TextSizes.Medium}
           />
           
           <RPDSectionTitle>Situação</RPDSectionTitle>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {TextStyle} from '../../Styling/SharedStyles';
+import {TextSizes} from '../../Styling/SharedStyles';
 import {WithThemeContext} from '../../Contexts/ThemeContext';
 
 @WithThemeContext
@@ -9,7 +9,7 @@ export default class RPDSectionTitle extends React.Component{
     return(
       <Text style={
         [
-          TextStyle.Big,
+          TextSizes.Big,
           {color:this.props.theme.Text.Title}
         ]
       }
