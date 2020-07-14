@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
     "experimentalDecorators": true,
     "allowJs": true
   }

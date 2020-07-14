@@ -1,5 +1,5 @@
 import React from 'react';
-import {WithThemeContext} from '../Contexts/ThemeContext';
+import {WithThemeContext} from '../Contexts/ContextsExport';
 import {TextSizes} from '../Styling/SharedStyles';
 import { TouchableHighlight, Text } from 'react-native';
 

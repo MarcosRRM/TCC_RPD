@@ -2,7 +2,7 @@ import React from 'react';
 import {View,Image} from 'react-native';
 import ControledCustomInput from '../../SharedComponents/ControledCustomInput';
 import ThemedButton from '../../SharedComponents/ThemedButton';
-import {WithThemeContext} from '../../Contexts/ThemeContext';
+import {WithThemeContext} from '../../Contexts/ContextsExport';
 
 @WithThemeContext
 export default class AppLogin extends React.Component{

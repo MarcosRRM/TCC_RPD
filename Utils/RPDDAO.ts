@@ -1,36 +1,47 @@
 import Tools from './TestTools';
-
-function rpdMock (_a,_b,_c,_d,_e,_f,_g) {
-  return {
-    id: _a,
-    title: _b,
-    situation: _c,
-    autoThoughts: _d,
-    emotion: _e,
-    conclusion: _f,
-    result: _g,
-    date:new Date(2020,Tools.randomInt(1,12),Tools.randomInt(1,28))
-  }
-}
+import {iRPD} from '../Models/RPD';
+import md5 from 'md5';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default {
-  getAllRPD(){
-    // TO DO
-    // MOCK
-    let ret = [];
-    for (let i = 1;i<=10;i++){
-      ret.push(
-        rpdMock(
-          i,
-          'Meu RPD '+i,
-          'Fusce non leo fermentum, consectetur metus in, condimentum lorem.',
-          'Nunc a ligula nec risus aliquam fermentum ut sit amet felis.',
-          'Morbi vitae metus non dolor bibendum volutpat.',
-          'Etiam posuere augue in ultrices maximus.',
-          'Vivamus non lectus eget tellus maximus iaculis eu non velit.'
-        )
-      )
+  async getAllRPD():Promise<iRPD[]>{
+
+    let list = [];
+
+    try{
+      let item = await AsyncStorage.getItem('rpdList');
+      list = JSON.parse(item) || [];
+      list.forEach((rpd)=>rpd.DateTime = new Date(rpd.DateTime))
     }
-    return ret;
+    catch(e){
+      console.log(e);
+    }
+    return list;
+  },
+
+  async saveAllRPD(rpd:iRPD[]):Promise<{ok:boolean,error?:string}>{
+    try{
+      AsyncStorage.setItem('rpdList',JSON.stringify(rpd));
+      return {ok:true};
+    }
+    catch(e){
+      console.log(e);
+      return {ok:false, error:e};
+    }
+  },
+
+  async deleteRPD(id:number):Promise<{ok:boolean,error?:string}>{
+    return { ok: true }
+  },
+
+  getIDsHash(rpdList:iRPD[]):string{
+    let concatIDs = '';
+
+    for (let rpd of rpdList){
+      concatIDs += rpd.ID;
+    }
+
+    return md5(concatIDs);
   }
+
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextInput} from 'react-native';
 import {TextSizes} from '../Styling/SharedStyles';
-import {WithThemeContext} from '../Contexts/ThemeContext';
+import {WithThemeContext} from '../Contexts/ContextsExport';
 
 @WithThemeContext
 export default class ControledCustomInput extends React.Component{

@@ -1,18 +1,19 @@
 import React from 'react';
 import {View} from 'react-native';
-import { WithThemeContext } from '../../Contexts/ThemeContext';
+import { WithThemeContext } from '../../Contexts/ContextsExport';
 
 @WithThemeContext
 export default class RPDInputGroup extends React.Component{
   render(){
     return(
       <View
-      style={[{
+      style={{
         borderRadius: 5,
-        backgroundColor:'#DDD',
+        backgroundColor:this.props.theme.Background.Second,
         padding:5,
-        marginBottom: 8
-      }]}>
+        marginTop: 5,
+        marginBottom: 10
+      }}>
         {this.props.children}
       </View>
     );

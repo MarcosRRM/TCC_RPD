@@ -4,10 +4,7 @@ import ScreenManager from './ScreensManager';
 import ThemeContextProvider from './ContextComponents/ThemeContextProvider';
 import RPDContextProvider from './ContextComponents/RPDContextProvider';
 
-
-
 export default class App extends React.Component{
-
   render(){
     return (
       <ThemeContextProvider>
