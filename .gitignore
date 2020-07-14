@@ -24,6 +24,8 @@ DerivedData
 # Android/IntelliJ
 #
 *.apk
+.lock
+.bin
 
 # node.js
 #

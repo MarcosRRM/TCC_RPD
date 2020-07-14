@@ -53,7 +53,7 @@ export default {
         Border: AppColors.Pastel.Purple.Darker,
         Background: AppColors.Pastel.Purple.Dark,
         Foreground: AppColors.Neutral.White,
-        Title: AppColors.Pastel.Green.Dark
+        Title: AppColors.Pastel.Purple.Dark
       },
       {
         Border: AppColors.Pastel.Orange.Darker,
