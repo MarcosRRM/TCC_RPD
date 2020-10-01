@@ -1,6 +1,6 @@
 export interface iRPD{
   ID?:number;
-  Tittle:string;
+  Title:string;
   DateTime:Date;
   Situation:string;
   AutoThoughts:string;
@@ -8,4 +8,5 @@ export interface iRPD{
   Outcome:string;
   Result:string;
   PersonID?:number;
+  LastUpdate?:Date;
 }

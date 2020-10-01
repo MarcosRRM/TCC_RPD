@@ -79,22 +79,25 @@ export default {
   Text: {
     Primary: AppColors.Neutral.Dark,
     Secundary: AppColors.Neutral.Dark,
+    Faded: AppColors.Neutral.Regular,
     Inverted: AppColors.Neutral.White,
     Title: AppColors.Green.Regular
   },
 
   Button:{
     Basic:{
-      Border: AppColors.Neutral.Regular,
       Background:  AppColors.Neutral.Light,
       Foreground: AppColors.Neutral.Dark
+    },
+    Main:{
+      Background:  AppColors.Pastel.Blue.Darker,
+      Foreground: AppColors.Neutral.White
     },
     Danger:{
       Background: AppColors.Pastel.Red.Darker,
       Foreground: AppColors.Neutral.White
     },
     Confirm:{
-      Border: AppColors.Pastel.Green.Lighter,
       Background: AppColors.Pastel.Green.Dark,
       Foreground: AppColors.Neutral.White
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {TextSizes} from '../../Styling/SharedStyles';
-import {WithThemeContext} from '../../Contexts/ContextsExport';
+import {WithThemeContext} from '../../Contexts/WithContexts';
 
 @WithThemeContext
 export default class RPDSectionTitle extends React.Component{

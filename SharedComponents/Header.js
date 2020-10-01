@@ -1,12 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
-import {WithThemeContext} from '../Contexts/ContextsExport';
+import {WithThemeContext} from '../Contexts/WithContexts';
 
 @WithThemeContext
 export default class Header extends React.Component {
   render(){
     return(
-      <View style={{
+      <View
+      style={{
         height:60,
         width: '100%',
         backgroundColor: this.props.theme.Background.Second,

@@ -2,12 +2,19 @@ import RPDEditor from './RPDEditor';
 import RPDList from  './RPDList';
 import APPLogin from './AppLogin';
 import ConfigScreen from './ConfigScreen';
+import NewAccount from './NewAccount';
+import ChangePassword from './ChangePassword';
+import ForgotPassword from './ForgotPassword';
 
 const ScreenComponents = [
   {name: 'RPDEditor', component: RPDEditor},
   {name: 'RPDList', component: RPDList},
+  {name: 'ConfigScreen', component: ConfigScreen},
+  
   {name: 'APPLogin', component: APPLogin},
-  {name: 'ConfigScreen', component: ConfigScreen}
+  {name: 'NewAccount', component: NewAccount},
+  {name: 'ChangePassword', component: ChangePassword},
+  {name: 'ForgotPassword', component: ForgotPassword},
 ]
 
 const SetUpScreenList = (_initialScreen) => {

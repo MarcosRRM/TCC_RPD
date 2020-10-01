@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput} from 'react-native';
-import {WithThemeContext} from '../../Contexts/ContextsExport';
+import {WithThemeContext} from '../../Contexts/WithContexts';
 import {TextSizes} from '../../Styling/SharedStyles';
 
 @WithThemeContext

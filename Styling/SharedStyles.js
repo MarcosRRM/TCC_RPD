@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Modal, StyleSheet} from 'react-native';
 
 const TextSizes = {
   Small:{
@@ -19,7 +19,17 @@ const ScreenStyle = {
   HeaderHeight: 60
 }
 
+const ModalStyle = {
+  alignSelf:'center',
+  maxWidth: '80%',
+  height: 100,
+  borderRadius: 8,
+  padding: 10,
+  elevation: 6
+}
+
 export {
   TextSizes,
-  ScreenStyle
+  ScreenStyle,
+  ModalStyle
 }

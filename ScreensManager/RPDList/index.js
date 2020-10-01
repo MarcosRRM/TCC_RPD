@@ -1,14 +1,19 @@
 import React from 'react';
-import {FlatList, View, Text, TouchableHighlight} from 'react-native';
+import {FlatList, View, Text} from 'react-native';
 import RPDCard from './RPDCard';
-import { WithRPDnThemeContext } from '../../Contexts/ContextsExport';
+import { WithThemeAndRPDContext } from '../../Contexts/WithContexts';
 import {Icon} from 'react-native-elements';
 
-@WithRPDnThemeContext
+@WithThemeAndRPDContext
 export default class RPDList extends React.Component{
-  
-  render(){
 
+  async componentDidMount(){
+    if (!this.props.RPDCtx.CheckedCloud){
+      await this.props.RPDCtx.loadCloud();
+    }
+  }
+
+  render(){
     return (
       <View
       style={{
@@ -19,14 +24,15 @@ export default class RPDList extends React.Component{
         backgroundColor:this.props.theme.Background.First
       }}
       >
-        {this.props.RPDCtx.list.length>0 ?
+        {this.props.RPDCtx.RPDList.length>0 ?
           <FlatList
-          data={this.props.RPDCtx.list}
+          data={this.props.RPDCtx.RPDList}
           style={{width:'90%',marginRight:'auto', marginLeft:'auto'}}
-          renderItem={({item})=>{
+          renderItem={({item,index})=>{
             return(
               <RPDCard
               rpdData = {item}
+              localIndex={index}
               editorCallback={this.props.showScreen}
               />
             ); 
@@ -60,7 +66,7 @@ const AddButton = (props) =>
   type={'font-awesome'}
   reverse
   color={props.theme.AddButton.Background}
-  size={40}
+  size={30}
   containerStyle={{
     position:'absolute',
     bottom:10,
@@ -76,7 +82,7 @@ const ConfigButton = (props) =>
   type={'font-awesome'}
   reverse
   color={props.theme.ConfigButton.Background}
-  size={40}
+  size={30}
   containerStyle={{
     position:'absolute',
     bottom:10,

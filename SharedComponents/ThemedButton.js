@@ -1,5 +1,5 @@
 import React from 'react';
-import {WithThemeContext} from '../Contexts/ContextsExport';
+import {WithThemeContext} from '../Contexts/WithContexts';
 import {TextSizes} from '../Styling/SharedStyles';
 import { TouchableHighlight, Text } from 'react-native';
 
@@ -7,7 +7,7 @@ import { TouchableHighlight, Text } from 'react-native';
 export default class ThemedButton extends React.Component{
   
   static defaultProps = {
-    tittle: 'Button',
+    title: 'Button',
     onPress: ()=>{},
     type: 'Basic',
     style: {},
@@ -21,7 +21,7 @@ export default class ThemedButton extends React.Component{
       type,
       theme,
       style,
-      tittle,
+      title,
       textStyle,
       size,
       ..._props
@@ -32,10 +32,8 @@ export default class ThemedButton extends React.Component{
       {..._props}
       style={[{
         width: '50%',
-        padding: 5,
+        padding: 6,
         borderRadius: 100,
-        borderWidth: 2,
-        borderColor:  (theme.Button[type] || theme.Button['Basic']).Border,
         backgroundColor: (theme.Button[type] || theme.Button['Basic']).Background
       },
       style
@@ -51,7 +49,7 @@ export default class ThemedButton extends React.Component{
           textStyle
         ]}
         >
-          {_props.title}
+          {title}
         </Text>
       </TouchableHighlight>
     );

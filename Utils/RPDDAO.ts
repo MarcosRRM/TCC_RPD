@@ -11,7 +11,10 @@ export default {
     try{
       let item = await AsyncStorage.getItem('rpdList');
       list = JSON.parse(item) || [];
-      list.forEach((rpd)=>rpd.DateTime = new Date(rpd.DateTime))
+      list.forEach((rpd)=>{
+        rpd.DateTime = new Date(rpd.DateTime);
+        rpd.LastUpdate = new Date(rpd.LastUpdate);
+      })
     }
     catch(e){
       console.log(e);
@@ -25,7 +28,6 @@ export default {
       return {ok:true};
     }
     catch(e){
-      console.log(e);
       return {ok:false, error:e};
     }
   },
@@ -34,14 +36,7 @@ export default {
     return { ok: true }
   },
 
-  getIDsHash(rpdList:iRPD[]):string{
-    let concatIDs = '';
-
-    for (let rpd of rpdList){
-      concatIDs += rpd.ID;
-    }
-
-    return md5(concatIDs);
+  async clearAll():Promise<void>{
+    AsyncStorage.removeItem('rpdList');
   }
-
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import {TouchableHighlight, View, Text, Alert} from 'react-native';
-import AppColors from '../../Styling/Colors/AppColors';
 import {Icon} from 'react-native-elements';
 import {TextSizes} from '../../Styling/SharedStyles';
-import { WithRPDnThemeContext } from '../../Contexts/ContextsExport';
+import { WithThemeAndModalAndRPDContext } from '../../Contexts/WithContexts';
 
-@WithRPDnThemeContext
+@WithThemeAndModalAndRPDContext
 export default class RPDCard extends React.Component{
 
   handleDeleteRPD = () => {
@@ -19,7 +18,17 @@ export default class RPDCard extends React.Component{
         },
         {
           text:'Sim',
-          onPress:()=>this.props.RPDCtx.removeRPD(this.props.rpdData.Id)
+          onPress:()=>{
+            this.props.RPDCtx.removeRPD(this.props.localIndex);
+            this.props.ModalCtx.showModal('Loading',{message:'Sincronizando...'})
+            this.props.RPDCtx.syncRequest()
+            .then(()=>{
+              this.props.ModalCtx.showModal();
+            })
+            .catch(()=>{
+              Alert.alert('Falha ao sincronizar.','Cheque a sua conexão de internet.\nVocê pode tentar sincronizar novamente através do menu de configurações.');
+            })
+          }
         }
       ]
     )
@@ -27,10 +36,12 @@ export default class RPDCard extends React.Component{
 
   render(){
 
-    let CardThemeIndex = (this.props.rpdData.Id%this.props.theme.Card.length).toString()
+    console.log(this.props.rpdData);
+
+    let CardThemeIndex = (this.props.localIndex%this.props.theme.Card.length).toString()
 
     return(
-      <TouchableHighlight onPress={()=>this.props.editorCallback( 'RPDEditor', this.props.rpdData )}>
+      <TouchableHighlight onPress={()=>this.props.editorCallback( 'RPDEditor', {...this.props.rpdData, localIndex:this.props.localIndex} )}>
         <View
         style={{
           borderRadius:5,
@@ -44,13 +55,12 @@ export default class RPDCard extends React.Component{
           numberOfLines={1}
           style={{
             ...TextSizes.Big,
-            flex: 1,
             color:this.props.theme.Card[CardThemeIndex].Foreground
           }}
           >
             {this.props.rpdData.Title}
           </Text>
-            
+
           <View style={{flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
             <View style={{ flexDirection: 'row', alignItems: 'center'}}>
               <Icon
@@ -68,6 +78,25 @@ export default class RPDCard extends React.Component{
               >
                 {this.props.rpdData.DateTime.toLocaleDateString('pt-BR')}
               </Text>
+
+              <Text
+              numberOfLines={1}
+              style={{
+                ...TextSizes.Medium,
+                marginLeft: 15,
+                color: this.props.theme.Card[CardThemeIndex].Foreground
+              }}
+              >
+                Sincro.:
+              </Text>
+              <Icon
+              size={20}
+              iconStyle={{marginLeft:5}}
+              name={ this.props.rpdData.LastUpdate < this.props.RPDCtx.LastSynced ? 'check':'remove'
+              }
+              color={this.props.theme.Card[CardThemeIndex].Foreground}
+              type={'font-awesome'}
+              />
             </View>
             <View style={{flexDirection:'row'}}>
               <TouchableHighlight onPress={this.handleDeleteRPD}>

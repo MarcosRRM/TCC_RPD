@@ -1,6 +1,6 @@
 import React from 'react';
 import {LightTheme, DarkTheme} from '../Styling/Colors';
-import {ThemeContext} from '../Contexts/ThemeContext';
+import {ThemeContext} from '../Contexts/ContextsBase';
 import AsyncStorage from '@react-native-community/async-storage';
 
 export default class ThemeContextProvider extends React.Component{
@@ -21,7 +21,6 @@ export default class ThemeContextProvider extends React.Component{
 
     }
     catch(error){
-      console.log('error:', error);
       this.setState({loaded:false},AsyncStorage.setItem('Theme','false'));
     }
   }
@@ -34,7 +33,6 @@ export default class ThemeContextProvider extends React.Component{
       this.setState({isLightTheme: !this.state.isLightTheme});
     }
     catch (error) {
-      console.log('Error Changing Theme: ', error)
     }
   }
 
